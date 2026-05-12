@@ -107,34 +107,36 @@
   }
   .tab-bar {
     display: flex;
-    overflow-x: auto;
-    scrollbar-width: none;
+    flex-wrap: wrap;
     max-width: 960px;
     margin: 0 auto;
-    padding: 0 12px;
+    padding: 0 8px;
   }
-  .tab-bar::-webkit-scrollbar { display: none; }
   .tab-btn {
-    flex-shrink: 0;
+    flex: 1 1 auto;
     background: none;
     border: none;
     cursor: pointer;
-    padding: 14px 20px;
+    padding: 12px 10px;
     font-family: 'Lato', sans-serif;
-    font-size: 0.82rem;
+    font-size: 0.75rem;
     font-weight: 700;
-    letter-spacing: 0.07em;
+    letter-spacing: 0.06em;
     text-transform: uppercase;
     color: rgba(255,255,255,0.45);
     border-bottom: 3px solid transparent;
     margin-bottom: -2px;
     transition: color 0.2s, border-color 0.2s;
     white-space: nowrap;
+    text-align: center;
   }
   .tab-btn:hover { color: rgba(255,255,255,0.75); }
   .tab-btn.active {
     color: var(--gold-light);
     border-bottom-color: var(--gold);
+  }
+  @media (max-width: 700px) {
+    .tab-btn { font-size: 0.65rem; padding: 10px 6px; letter-spacing: 0.03em; }
   }
 
   /* ── Content Area ── */
@@ -582,11 +584,11 @@
 <nav class="tab-bar-wrap" role="navigation" aria-label="Season navigation">
   <div class="tab-bar">
     <button class="tab-btn active" onclick="switchTab(0)" id="tab-0">Introduction</button>
-    <button class="tab-btn" onclick="switchTab(1)" id="tab-1">Day 1 · Receiving Rest</button>
-    <button class="tab-btn" onclick="switchTab(2)" id="tab-2">Day 2 · Letting Go</button>
-    <button class="tab-btn" onclick="switchTab(3)" id="tab-3">Day 3 · Turn Off Noise</button>
-    <button class="tab-btn" onclick="switchTab(4)" id="tab-4">Day 4 · Rest Without Guilt</button>
-    <button class="tab-btn" onclick="switchTab(5)" id="tab-5">Day 5 · Trust &amp; Unfinished</button>
+    <button class="tab-btn" onclick="switchTab(1)" id="tab-1">Day 1</button>
+    <button class="tab-btn" onclick="switchTab(2)" id="tab-2">Day 2</button>
+    <button class="tab-btn" onclick="switchTab(3)" id="tab-3">Day 3</button>
+    <button class="tab-btn" onclick="switchTab(4)" id="tab-4">Day 4</button>
+    <button class="tab-btn" onclick="switchTab(5)" id="tab-5">Day 5</button>
   </div>
 </nav>
 
